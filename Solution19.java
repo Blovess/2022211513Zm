@@ -1,3 +1,4 @@
+//写得很好，条理逻辑清晰
 import java.util.*;
 
 /*
@@ -20,6 +21,7 @@ import java.util.*;
  */
 class Solution {
     public void gameOfLife(int[][] board) {
+        // 检查输入是否为空或无效
         if (board == null || board.length == 0 || board[0].length == 0) {
             return;
         }
@@ -58,6 +60,8 @@ class Solution {
                         nextBoard[row][col] = 1;
                     }
                 } else {
+                    // 当前细胞是死细胞  
+                    // 如果死细胞周围正好有三个活细胞，则复活
                     if (liveNeighbors == 3) {
                         nextBoard[row][col] = 1;
                     }
@@ -66,6 +70,7 @@ class Solution {
         }
 
         // 更新原数组为下一个状态
+        // 将计算出的下一个状态更新回原数组
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
                 board[row][col] = nextBoard[row][col];
