@@ -1,3 +1,4 @@
+//该测试用例有条理，逻辑清晰
 public class Test {
     public static void printBoard(int[][] board) {
         for (int[] row : board) {
